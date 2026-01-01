@@ -44,74 +44,9 @@ Create an isolated environment for project dependencies:
 python -m venv jarvisenv
 ```
 
-**What this does**: Creates a `jarvisenv` folder with Python packages isolated from your system
 
----
 
-### Step 4: Activate Virtual Environment
-
-```powershell
-.\jarvisenv\Scripts\Activate.ps1
-```
-
-**Expected result**: Your prompt should now show `(jarvisenv)` at the beginning
-
-**If you get an execution policy error**:
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-Then try activating again.
-
----
-
-### Step 5: Install Dependencies
-
-Install all required Python packages:
-
-```powershell
-pip install SpeechRecognition pyttsx3 googletrans==4.0.0-rc1 keyboard requests
-```
-
-**Wait for installation to complete** (may take 1-2 minutes)
-
----
-
-### Step 6: Install PyAudio (Audio Input)
-
-PyAudio can be tricky on Windows. Try method A first:
-
-**Method A - Direct Install:**
-```powershell
-pip install pyaudio
-```
-
-**If Method A fails, use Method B:**
-```powershell
-pip install pipwin
-pipwin install pyaudio
-```
-
-**If both methods fail, use Method C:**
-1. Visit: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
-2. Download the `.whl` file matching your Python version and system (e.g., `PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.whl` for Python 3.10, 64-bit)
-3. Install it:
-```powershell
-pip install path\to\downloaded\file.whl
-```
-
----
-
-### Step 7: Get DeepSeek API Key
-
-1. Go to: https://platform.deepseek.com/
-2. Sign up for a free account
-3. Navigate to **API Keys** section
-4. Click **Create API Key**
-5. Copy the key (starts with `sk-` or similar)
-
----
-
-### Step 8: Configure API Key
+### Step 4: Configure API Key
 
 Open `jarvis.py` in a text editor (Notepad, VS Code, etc.) and find line 17:
 
@@ -129,7 +64,7 @@ Save the file.
 
 ---
 
-### Step 9: Test Microphone Permissions
+### Step 5: Test Microphone Permissions
 
 1. Go to **Windows Settings** → **Privacy** → **Microphone**
 2. Ensure **"Allow apps to access your microphone"** is **ON**
@@ -137,7 +72,7 @@ Save the file.
 
 ---
 
-### Step 10: Run Jarvis
+### Step 6: Run Jarvis
 
 ```powershell
 python jarvis.py
